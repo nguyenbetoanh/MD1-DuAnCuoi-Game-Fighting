@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Blaka+Ink&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin-top: -13px;
+            margin-left: 230px;
+            background-color: cyan;
+
+        }
+        *{
+            box-sizing: border-box;
+        }
+        h1{
+            font-family: 'Blaka Ink', cursive;
+            margin-top: 10px;
+            margin-left: 430px;
+        }
+    </style>
+
+</head>
+<body>
+<h1>Fighting game</h1>
+<!--     tao thanh mau -->
+<!--red contaniner-->
+
+<div style="position: relative;display: inline-block">
+    <!--    smalle red container-->
+    <div
+            style="position: absolute;
+            display: flex;
+            width: 100%;
+            align-items: center;
+            padding: 20px ">
+        <!--        play health-->
+
+        <div style="position: relative;height: 30px;width: 100%;display: flex;justify-content: flex-end">
+            <div  style="background-color: yellow;height: 30px;width: 100%"></div>
+            <div id="playerHealth"
+                 style="position: absolute;
+                background-color: blue;
+                top:0;
+                right: 0;
+                bottom: 0;
+                width: 100%;
+                    "
+            ></div>
+        </div>
+
+        <!--       time-->
+        <div style="background-color: red;width: 100px;height: 100px"></div>
+        <div
+                id="timer"
+                style="
+                    background-color: red;
+                    width: 100px;
+                    height: 100px;
+                    flex-shrink: 0;
+                    display:flex;
+                     padding-top: 36px;
+                    padding-left: 15px
+                    ;font-size: xx-large
+                    ;color: chartreuse;
+                "
+        >
+
+        </div>
+        <!--                  enenmy health-->
+        <div style="position: relative;height: 30px;width: 100%">
+        <div  style="background-color: yellow;height: 30px"></div>
+        <div id="enemyHealth"
+                style="position: absolute;
+                background-color: blue;
+                top:0;
+                right: 0;
+                bottom: 0;
+                left: 0
+                    "
+        ></div>
+        </div>
+        <div></div>
+    </div>
+ <div
+        id="displayText"
+         style="position: absolute;
+ color: red;display: flex;
+ align-items: center;
+ justify-content: center;
+ top:0;
+ right: 0;
+ bottom: 0;
+ left: 0;
+ display: none;
+ font-size: xxx-large;
+ color: greenyellow;
+
+">Anh bạn à , xin giảng hòa</div>
+    <div
+            id="talk1"
+            style="position: absolute;
+ color: blueviolet;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ top:100px;
+ left: 200px;
+ display: none;
+"></div>
+
+    <div>
+        <img src="img/anhjojo.png"style="width: 250px;height: 500px;position: absolute;top: 40px;left: -250px">
+        <canvas id="canvas"></canvas>
+        <img src="img/hinh anh dep.webp"style="width: 250px;height: 500px;position: absolute;top: 40px">
+    </div>
+</div>
+<script src="utils.js"></script>
+<script src="class.js"></script>
+<script src="game.js"></script>
+
+<h3 style="position: relative"> Dìu dắt bởi Giáo viên : <a href="https://www.facebook.com/profile.php?id=100001884425051">Nguyễn Đồng Chính </a>và Giáo viên A.K.A NSND
+    <a href="https://www.facebook.com/quochai0110">Quốc Hai </a> </a> Người tạo game :  <a href="https://www.facebook.com/betoanhdeptrai/"> Beto Anh</a></h3>
+
+</body>
+</html>

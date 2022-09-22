@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    <script src="../model/User.js"></script>
+
+</head>
+<script></script>
+<body>
+<section class="vh-100 bg-image"
+         style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp');">
+    <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+        <div class="container h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+                    <div class="card" style="border-radius: 15px;">
+                        <div class="card-body p-5">
+                            <h2 class="text-uppercase text-center mb-5">Create an account</h2>
+
+                            <form>
+<!--       NAME===========-->
+                                <div class="form-outline mb-4">
+                                    <label id="useName" class="htName">Your Name</label>
+                                    <input oninput="checkValidate()" type="text" id="name" class="form-control form-control-lg" />
+
+                                </div>
+<!--Email=============-->
+                                <div class="form-outline mb-4">
+                                    <label class="htEmail" >Your Email</label>
+                                    <input oninput="checkValidate()" type="email" id="email" class="form-control form-control-lg" />
+
+                                </div>
+<!--Password==============-->
+                                <div class="form-outline mb-4">
+                                    <label class="htPassword">Password</label>
+                                    <input oninput="checkValidate()" type="password" id="password" class="form-control form-control-lg" />
+
+                                </div>
+<!--Repeat==============-->
+                                <div class="form-outline mb-4">
+                                    <label class="htRepeat">Repeat your password</label>
+                                    <input oninput="checkValidate()" type="password" id="repeat" class="form-control form-control-lg" />
+
+                                </div>
+
+                                <div class="form-check d-flex justify-content-center mb-5">
+                                    <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3cg" />
+                                    <label class="form-check-label">
+                                        I agree all statements in <a href="#!" class="text-body"><u>Terms of service</u></a>
+                                    </label>
+                                </div>
+
+                                <div class="d-flex justify-content-center">
+                                    <button type="button"
+                                            onclick="repeat()"
+                                            class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Register</button>
+                                </div>
+
+                                <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="/dang%20nhap/login.html"
+                                                                                                        class="fw-bold text-body"><u>Login here</u></a></p>
+
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    let name
+    let userName
+    let  listUser
+    let password
+    let repeat
+    let gmail
+
+    function checkValidate() {
+       password = document.getElementById('password').value;
+        repeat = document.getElementById('repeat').value;
+        name =document.getElementById('name').value;
+
+        // check khoảng trong
+        if (name.trim() === "") {
+            document.getElementById('htName').innerHTML = "<label style=\"color: red\">Bạn chưa nhập gì cả !</label>"
+        } else
+            document.getElementById('htName').innerHTML = "<label style=\"color: blue\">Tên này hợp lệ</label>"
+        if (gmail.trim()===""){
+            document.getElementById('htGmail').innerHTML="<label style=\"color: red\">Bạn chưa nhập gì cả !</label>"
+        }else
+            document.getElementById('htGmail').innerHTML="<label style=\"color: blue\">Tên này hợp lệ</label>"
+        if (password.trim()===""){
+            document.getElementById('htPassword').innerHTML="<label style=\"color: red\">Bạn chưa nhập gì cả !</label>"
+        }else
+            document.getElementById('htPassword').innerHTML="<label style=\"color: blue\">Tên này hợp lệ</label>"
+        if (repeat.trim()===""){
+            document.getElementById('htRepeat').innerHTML="<label style=\"color: red\">Bạn chưa nhập gì cả !</label>"
+        }else
+            document.getElementById('htRepeat').innerHTML="<label style=\"color: blue\">Tên này hợp lệ</label>"
+
+    // check trung ten password
+
+        if (password!==repeat){
+            document.getElementById('htRepeat').innerHTML = "<label style=\"color: red\">Bạn đang nhập mật khẩu khác nhau !</label>"
+        }else
+            document.getElementById('htRepeat').innerHTML = "<label style=\"color: blue\">Mật khẩu được rồi</label>"
+
+    }
+    function repeat(){
+     userName = document.getElementById('useName').value;
+   gmail = document.getElementById('gmail').value;
+    let id ;
+    if (listUser==null){
+        listUser=[]
+        id=1
+    }else{
+        listUser = JSON.parse(window.localStorage.getItem('list_user'));
+        id = listUser[listUser.length-1].id +1;
+
+    }
+    let user =new User(id,name,userName,gmail,password)
+        listUser.push(user)
+        window.localStorage.setItem('list_user',JSON.stringify(listUser))
+        window.location.href = 'login.html';
+    }
+
+</script>
+</body>
+</html>
